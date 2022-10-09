@@ -9,12 +9,12 @@ export default function CardSettings() {
         <div className="rounded-t bg-white mb-0 px-6 py-6">
           <div className="text-center flex justify-between">
             <h6 className="text-blueGray-700 text-xl font-bold">Add a New Program</h6>
-            {/* <button
+            <button
               className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
               type="button"
             >
-              Settings
-            </button> */}
+              Submitt
+            </button>
           </div>
         </div>
         <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
