@@ -27,7 +27,7 @@ const IndexDropdown = () => {
           dropdownPopoverShow ? closeDropdownPopover() : openDropdownPopover();
         }}
       >
-        Demo Pages
+        {/* Demo Pages */}
       </a>
       <div
         ref={popoverDropdownRef}
