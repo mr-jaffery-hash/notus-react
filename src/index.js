@@ -6,10 +6,11 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import "assets/styles/tailwind.css";
 
 // layouts
-
 import Admin from "layouts/Admin.js";
 import Auth from "layouts/Auth.js";
-
+import SearchPage from "./Pages/SearchPage.js"
+import TempReportClearance from "./Pages/TempReportClearance.js"
+import EnrollmentForm from "./Pages/EnrollmentForm.js";
 // views without layouts
 
 import Landing from "views/Landing.js";
@@ -25,9 +26,12 @@ ReactDOM.render(
       {/* add routes without layouts */}
       <Route path="/landing" exact component={Landing} />
       <Route path="/profile" exact component={Profile} />
-      <Route path="/" exact component={Index} />
+      <Route path="/" exact component={Landing} />
+      <Route path="/search" exact component={SearchPage}></Route>
+      <Route path="/reportClearance" exact component={TempReportClearance}></Route>
+      <Route path="/enroll" exact component={EnrollmentForm}></Route>
       {/* add redirect for first page */}
-      <Redirect from="*" to="/" />
+      {/*<Redirect from="*" to="/" />*/}
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")

@@ -3,6 +3,7 @@ import React from "react";
 // components
 
 import CardStats from "components/Cards/CardStats.js";
+import { Link } from "react-router-dom";
 
 export default function HeaderStats() {
   return (
@@ -14,50 +15,52 @@ export default function HeaderStats() {
             {/* Card stats */}
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+                <Link to="/search">
                 <CardStats
-                  statSubtitle="TRAFFIC"
-                  statTitle="350,897"
+                  statSubtitle="SEARCH FOR COMMUNITY WORK"
+                  statTitle="Register for volunteership"
                   statArrow="up"
-                  statPercent="3.48"
+                  statPercent="100+ vacancies"
                   statPercentColor="text-emerald-500"
-                  statDescripiron="Since last month"
-                  statIconName="far fa-chart-bar"
+                  statDescripiron="in the last 24 hours"
+                  statIconName="fas fa-users"
+                  statIconColor="bg-lightBlue-500"
+                />
+                </Link>
+              </div>
+              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+                <CardStats
+                  statSubtitle="REPORT CLEARANCE"
+                  statTitle="Request verification"
+                  statArrow=""
+                  statPercent=""
+                  statPercentColor=""
+                  statDescripiron=""
+                  statIconName="fas fa-book"
                   statIconColor="bg-red-500"
                 />
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="NEW USERS"
-                  statTitle="2,356"
-                  statArrow="down"
-                  statPercent="3.48"
-                  statPercentColor="text-red-500"
-                  statDescripiron="Since last week"
-                  statIconName="fas fa-chart-pie"
-                  statIconColor="bg-orange-500"
-                />
-              </div>
-              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-                <CardStats
-                  statSubtitle="SALES"
-                  statTitle="924"
-                  statArrow="down"
-                  statPercent="1.10"
-                  statPercentColor="text-orange-500"
-                  statDescripiron="Since yesterday"
-                  statIconName="fas fa-users"
+                  statSubtitle="PAST ACTIVITIES"
+                  statTitle="See previous involvements"
+                  statArrow=""
+                  statPercent=""
+                  statPercentColor=""
+                  statDescripiron=""
+                  statIconName="fas fa-clock"
                   statIconColor="bg-pink-500"
                 />
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="PERFORMANCE"
-                  statTitle="49,65%"
-                  statArrow="up"
-                  statPercent="12"
+                  statSubtitle="ACADEMIC DETAILS"
+                  statTitle="See your information"
+                  statArrow=""
+                  statPercent=""
                   statPercentColor="text-emerald-500"
-                  statDescripiron="Since last month"
-                  statIconName="fas fa-percent"
+                  statDescripiron=""
+                  statIconName="fas fa-school"
                   statIconColor="bg-lightBlue-500"
                 />
               </div>
