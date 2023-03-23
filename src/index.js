@@ -12,7 +12,7 @@ import SearchPage from "./Pages/SearchPage.js"
 import TempReportClearance from "./Pages/TempReportClearance.js"
 import EnrollmentForm from "./Pages/EnrollmentForm.js";
 // views without layouts
-
+import Recommendation from "./Pages/Recommendation.js";
 import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
@@ -25,6 +25,7 @@ ReactDOM.render(
       <Route path="/auth" component={Auth} />
       {/* add routes without layouts */}
       <Route path="/landing" exact component={Landing} />
+      <Route path ="/recommendation" exact component = {Recommendation}/>
       <Route path="/profile" exact component={Profile} />
       <Route path="/" exact component={Landing} />
       <Route path="/search" exact component={SearchPage}></Route>
