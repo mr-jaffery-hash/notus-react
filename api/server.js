@@ -9,7 +9,7 @@ const cors = require("cors")
 app.use(cors());
 // routes
 const volunteer = require("./routes/volunteer"); // added
-
+const enrolled = require("./routes/Enrolled");
 // connect database
 connectDB();
 
@@ -19,7 +19,7 @@ app.get("/", (req, res) => res.send("Server up and running"));
 
 // use routes
 app.use("/api/volunteer", volunteer); // added
-
+app.use("/api/enrolled",enrolled);
 // setting up port
 const PORT = process.env.PORT || 5000;
 

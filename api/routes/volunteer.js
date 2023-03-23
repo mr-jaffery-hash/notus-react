@@ -122,7 +122,25 @@ router.post('/signup', async (req, res) => {
   })
 
 
+  router.get('/:email', function (req, res) {
+    console.log(req.params.email)
+    Volunteer.findOne({email: req.params.email}, (err, vol) => {
+        if (err)
+            res.status(400).json({msg:"failed"})
+        else
+            res.send(JSON.stringify(vol))
+            
+    })
+})
 
+router.post('/update',async function(req,res){
+    const email = req.body.email;
+    const address = req.body.address
+    const name = req.body.name
+    await Volunteer.findOneAndUpdate({email:email},{address:address})
+    await Volunteer.findOneAndUpdate({email:email},{name:name})
+    res.send({message:"Updated"})
+})
 
 
 module.exports = router;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 // components
 
@@ -8,9 +8,16 @@ import CardBarChart from "components/Cards/CardBarChart.js";
 import Sidebar from "components/Sidebar/Sidebar";
 import AdminNavbar from "components/Navbars/AdminNavbar";
 import CardStats from "components/Cards/CardStats";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useParams, withRouter } from "react-router-dom";
 import HeaderStats from "components/Headers/HeaderStats";
-export default function EnrollmentForm() {
+export default withRouter( function EnrollmentForm(props) {
+  const param = useLocation()
+  const [name,setName] = useState()
+  const [pic,setPic] = useState()
+  useEffect(()=>{
+    setPic(param.state.pic)
+    setName(param.state.name)
+  },[])
   return (
     <>
         <Sidebar/>
@@ -42,10 +49,10 @@ export default function EnrollmentForm() {
         <div className="flex flex-wrap mt-4">      
       
         <div className="w-full mb-12 px-4">
-          <TempEnrollmentCard color="dark" />
+          <TempEnrollmentCard name={name} pic={pic} color="dark" />
         </div>
       </div>
       </div>
     </>
   );
-}
+})

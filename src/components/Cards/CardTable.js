@@ -5,8 +5,19 @@ import PropTypes from "prop-types";
 
 import TableDropdown from "components/Dropdowns/TableDropdown.js";
 import { Link } from "react-router-dom";
-
+import { useState } from "react";
 export default function CardTable({ color }) {
+
+  const [org,setOrg]=useState()
+  const [pic,setPic]=useState()
+  function onHoverHandle(event){
+    setPic(event.parentNode.firstChild.firstChild.src)
+    setOrg(event.parentNode.firstChild.textContent)
+  }
+  function onHoverExit(){
+    setOrg(null)
+    setPic(null)
+  }
   return (
     <>
       <div
@@ -126,14 +137,18 @@ export default function CardTable({ color }) {
             </thead>
             <tbody>
               
-              <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+              <tr onMouseEnter={(e)=>{onHoverHandle(e.target)}}>
+                <th id="head" className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
                   <img
+                  
+                    id = "cover"
                     src={require("assets/img/2.jpg").default}
                     className="h-12 w-12 bg-white rounded-full border"
                     alt="..."
                   ></img>{" "}
                   <span
+                    
+                    id="name"
                     className={
                       "ml-3 font-bold " +
                       +(color === "light" ? "text-blueGray-600" : "text-white")
@@ -195,7 +210,7 @@ export default function CardTable({ color }) {
                   </div>
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
+                  <TableDropdown name = {org} pic = {pic} />
                 </td>
               </tr>
               

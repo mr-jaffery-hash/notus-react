@@ -6,6 +6,7 @@ import CardTable from "../components/Cards/CardTable.js";
 import { Link } from "react-router-dom";
 import CardStats from "../components/Cards/CardStats.js";
 export default function Tables() {
+
   return (
     <>
         <AdminNavbar/>

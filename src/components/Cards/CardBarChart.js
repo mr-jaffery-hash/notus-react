@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "chart.js";
-
+import axios from "axios";
 export default function CardBarChart() {
+  const [job,setJob] = useState()
   React.useEffect(() => {
+    var email = localStorage.getItem('email')
+    axios.get(`http://localhost:5000/api/enrolled/display/${email}`)
+    .then(function(res){
+      setJob(res.data)
+    })
     let config = {
       type: "bar",
       data: {
@@ -12,7 +18,7 @@ export default function CardBarChart() {
         ],
         datasets: [
           {
-            label: "Edhi",
+            label: job,
             backgroundColor: "#ed64a6",
             borderColor: "#ed64a6",
             data: [24],
@@ -85,7 +91,7 @@ export default function CardBarChart() {
     };
     let ctx = document.getElementById("bar-chart").getContext("2d");
     window.myBar = new Chart(ctx, config);
-  }, []);
+  });
   return (
     <>
       <div className="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
