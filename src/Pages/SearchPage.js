@@ -3,6 +3,7 @@ import React from "react";
 // components
 import AdminNavbar from "../components/Navbars/AdminNavbar.js"
 import CardTable from "../components/Cards/CardTable.js";
+import CardTable2 from "../components/Cards/CardTable2.js";
 import { Link } from "react-router-dom";
 import CardStats from "../components/Cards/CardStats.js";
 export default function Tables() {
@@ -73,6 +74,12 @@ export default function Tables() {
         
         <div className="w-full mb-12 px-4">
           <CardTable />
+        </div>
+      </div>
+      <div className="flex flex-wrap mt-4">
+        
+        <div className="w-full mb-12 px-4">
+          <CardTable2 />
         </div>
       </div>
     </>

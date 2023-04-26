@@ -6,10 +6,32 @@ import PropTypes from "prop-types";
 import TableDropdown from "components/Dropdowns/TableDropdown.js";
 import { Link } from "react-router-dom";
 import { useState } from "react";
-export default function RecTable({ color }) {
 
+// const raccoon = require('raccoon')
+
+export default function RecTable({ color }) {
+  const [state1,setState1] = useState('Add')
+  const [state2,setState2] = useState('Add')
+  const [state3,setState3] = useState('Add')
+  const [state4,setState4] = useState('Add')
+  const [state5,setState5] = useState('Add')
   const [org,setOrg]=useState()
   const [pic,setPic]=useState()
+  function handlesubmit1(){
+    setState1('Added')
+  }
+  function handlesubmit2(){
+    setState2('Added')
+  }
+  function handlesubmit3(){
+    setState3('Added')
+  }
+  function handlesubmit4(){
+    setState4('Added')
+  }
+  function handlesubmit5(){
+    setState5('Added')
+  }
   function onHoverHandle(event){
     setPic(event.parentNode.firstChild.firstChild.src)
     setOrg(event.parentNode.firstChild.textContent)
@@ -101,7 +123,7 @@ export default function RecTable({ color }) {
                   </span>
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <button style={{background:'blue',color:'white', padding:10, margin:10}}> Add</button>
+                  <button style={{background:'blue',color:'white', padding:10, margin:10}} onClick={handlesubmit1}> {state1}</button>
                 </td>
                
                
@@ -127,7 +149,7 @@ export default function RecTable({ color }) {
                   </span>
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                <button style={{background:'blue',color:'white', padding:10, margin:10}}> Add</button>
+                <button style={{background:'blue',color:'white', padding:10, margin:10}} onClick={handlesubmit2}>{state2}</button>
                 </td>
                
                 
@@ -150,7 +172,7 @@ export default function RecTable({ color }) {
                   </span>
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                <button style={{background:'blue',color:'white', padding:10, margin:10}}> Add</button>
+                <button style={{background:'blue',color:'white', padding:10, margin:10}} onClick={handlesubmit3}> {state3}</button>
                 </td>
                 
               </tr>
@@ -171,7 +193,7 @@ export default function RecTable({ color }) {
                   </span>
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                <button style={{background:'blue',color:'white', padding:10, margin:10}}> Add</button>
+                <button style={{background:'blue',color:'white', padding:10, margin:10}} onClick={handlesubmit4}>{state4}</button>
                 </td>
                 
               </tr>
@@ -192,9 +214,15 @@ export default function RecTable({ color }) {
                   </span>
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                <button style={{background:'blue',color:'white', padding:10, margin:10}}> Add</button>
+                <button style={{background:'blue',color:'white', padding:10, margin:10}} onClick={handlesubmit5}>{state5}</button>
                 </td>
                 
+
+                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                  <Link to='/auth/login'>
+                <button style={{background:'blue',color:'white', padding:10, margin:10}}>Go to Login</button>
+                </Link>
+                </td>
               </tr>
             </tbody>
           </table>
