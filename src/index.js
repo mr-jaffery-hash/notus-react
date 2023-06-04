@@ -15,6 +15,10 @@ import Auth from "layouts/Auth.js";
 import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
+//new pages
+import Requests from "new/Requests.js";
+import Sturequests from "new/Sturequests.js";
+import Approve from "new/Approve.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -22,6 +26,9 @@ ReactDOM.render(
       {/* add routes with layouts */}
       <Route path="/admin" component={Admin} />
       <Route path="/auth" component={Auth} />
+      <Route path="/requests" exact component={Requests} />
+      <Route path="/approve" exact component={Approve} />
+      <Route path="/sturequests" exact component={Sturequests} />
       {/* add routes without layouts */}
       <Route path="/landing" exact component={Landing} />
       <Route path="/profile" exact component={Profile} />
