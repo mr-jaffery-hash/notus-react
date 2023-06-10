@@ -11,6 +11,26 @@ exports.getAllNGO = (req, res) => {
         );
 };
 
+exports.Login=async(req,res)=>{
+    const {email,password} =req.body;
+    console.log(email);
+    console.log(password);
+   const user= await NGO.findOne({name:email});
+        if(user){
+           if(password === user.password){
+            console.log(user.password);
+               res.send({message:"login sucess",user:user})
+           }else{
+            console.log(user.password);
+               res.send({message:"wrong credentials"})
+           }
+        }else{
+            res.send("not register")
+        }
+    };
+
+
+
 exports.postCreateNGO = (req, res) => {
     NGO.create(req.body)
         .then((data) => res.json({ message: "NGO added successfully", data }))

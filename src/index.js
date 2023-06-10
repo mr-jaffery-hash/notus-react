@@ -19,7 +19,9 @@ import Index from "views/Index.js";
 import Requests from "new/Requests.js";
 import Sturequests from "new/Sturequests.js";
 import Approve from "new/Approve.js";
-
+import Signup from "new/Signup.js";
+//login
+import Login from "views/auth/Login.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -32,6 +34,8 @@ ReactDOM.render(
       {/* add routes without layouts */}
       <Route path="/landing" exact component={Landing} />
       <Route path="/profile" exact component={Profile} />
+      <Route path="/login" exact component={Login} />
+      <Route path="/signup" exact component={Signup} />
       <Route path="/" exact component={Index} />
       {/* add redirect for first page */}
       <Redirect from="*" to="/" />

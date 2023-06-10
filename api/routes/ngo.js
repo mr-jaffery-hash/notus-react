@@ -6,6 +6,7 @@ const {
     postCreateNGO,
     putUpdateNGO,
     deleteNGO,
+    Login
 } = require("../controllers/ngo");
 
 /**
@@ -21,7 +22,7 @@ router.get("/", getAllNGO);
  * @access public
  */
 router.post("/", postCreateNGO);
-
+router.post("/login", Login);
 /**
  * @route PUT api/todo/:id
  * @description update todo
