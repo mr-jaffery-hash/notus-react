@@ -1,7 +1,7 @@
 // config/db.js
 const mongoose = require("mongoose");
 
-const db = "mongodb://localhost:27017/Rafah";
+const db = "mongodb+srv://mrjaffery:VXyEHHudq5iLGvQy@cluster0.g8aer3a.mongodb.net/";
 
 const connectDB = async () => {
     try {

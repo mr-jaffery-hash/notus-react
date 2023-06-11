@@ -39,7 +39,8 @@ export default function Register() {
                   setShow(JSON.stringify(response.data.message));
                   setSuccessful(1);
                   console.log(successful)
-                  window.location.href='http://localhost:3000/recommendation'
+                  localStorage.setItem('email', Volunteer.email)
+                  window.location.assign('http://localhost:3000/ratingspage')
               })
               .catch(function (error) {
                   console.log(error)
@@ -244,7 +245,7 @@ export default function Register() {
                       Create Account
                     </button>
                     :
-                    <Link to="http://localhost:3000/recommendation">
+                    <Link to="http://localhost:3000/ratingspage">
                         <button
                             className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                             type="button"                    

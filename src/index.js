@@ -11,11 +11,12 @@ import Auth from "layouts/Auth.js";
 import SearchPage from "./Pages/SearchPage.js"
 import TempReportClearance from "./Pages/TempReportClearance.js"
 import EnrollmentForm from "./Pages/EnrollmentForm.js";
+import AddJob from "./new/Addjob.js"
 // views without layouts
-import Recommendation from "./Pages/Recommendation.js";
 import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
+import RatingsPage from "./Pages/RatingsPage.js"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -24,13 +25,14 @@ ReactDOM.render(
       <Route path="/admin" component={Admin} />
       <Route path="/auth" component={Auth} />
       {/* add routes without layouts */}
+      <Route path="/RegisterJob" exact component={AddJob}/>
       <Route path="/landing" exact component={Landing} />
-      <Route path ="/recommendation" exact component = {Recommendation}/>
       <Route path="/profile" exact component={Profile} />
       <Route path="/" exact component={Landing} />
       <Route path="/search" exact component={SearchPage}></Route>
       <Route path="/reportClearance" exact component={TempReportClearance}></Route>
       <Route path="/enroll" exact component={EnrollmentForm}></Route>
+      <Route path="/ratingspage" exact component={RatingsPage}></Route>
       {/* add redirect for first page */}
       {/*<Redirect from="*" to="/" />*/}
     </Switch>

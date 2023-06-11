@@ -1,5 +1,5 @@
 // controllers/Volunteer.js
-const Volunteer = require("../models/Volunteer");
+const Volunteer = require("../models/volunteer.js");
 
 exports.getAllVolunteer = (req, res) => {
     Volunteer.find()

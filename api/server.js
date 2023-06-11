@@ -10,6 +10,11 @@ app.use(cors());
 // routes
 const volunteer = require("./routes/volunteer"); // added
 const enrolled = require("./routes/Enrolled");
+const job= require("./routes/job.js");
+const jobreq= require("./routes/jobreq.js");
+const ngo= require("./routes/ngo.js");
+const req= require("./routes/req.js");
+const admin= require("./routes/admin.js");
 // connect database
 connectDB();
 
@@ -20,6 +25,11 @@ app.get("/", (req, res) => res.send("Server up and running"));
 // use routes
 app.use("/api/volunteer", volunteer); // added
 app.use("/api/enrolled",enrolled);
+app.use("/api/job", job); // added
+app.use("/api/jobreq",jobreq);
+app.use("/api/ngo", ngo); // added
+app.use("/api/req",req);
+app.use("/api/admin", admin); // added
 // setting up port
 const PORT = process.env.PORT || 5000;
 
