@@ -35,6 +35,6 @@ router.put("/:id", putUpdateNGO);
  * @description delete todo
  * @access public
  */
-router.delete("/:id", deleteNGO);
+router.delete("/:email", deleteNGO);
 
 module.exports = router;

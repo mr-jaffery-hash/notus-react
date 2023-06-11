@@ -17,6 +17,8 @@ import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
 import RatingsPage from "./Pages/RatingsPage.js"
+//new
+import Jobsel from "new/Jobsel.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -24,6 +26,7 @@ ReactDOM.render(
       {/* add routes with layouts */}
       <Route path="/admin" component={Admin} />
       <Route path="/auth" component={Auth} />
+      <Route path="/jobsel" component={Jobsel} />
       {/* add routes without layouts */}
       <Route path="/RegisterJob" exact component={AddJob}/>
       <Route path="/landing" exact component={Landing} />

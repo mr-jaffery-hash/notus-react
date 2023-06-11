@@ -8,13 +8,12 @@ const NGOSchema = new mongoose.Schema({
     password: {
         type: "String"
     },
+    contact: {
+        type:"String"
+    },
     address :{
         type: "String"
-    },
-    Contact: {
-        type:"String"
     }
-
 });
 
 const NGO = mongoose.model("ngo", NGOSchema);

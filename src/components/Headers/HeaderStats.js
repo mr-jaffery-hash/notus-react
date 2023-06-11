@@ -29,6 +29,7 @@ export default function HeaderStats() {
                 </Link>
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+              <Link to="/jobsel">
                 <CardStats
                   statSubtitle="REPORT CLEARANCE"
                   statTitle="Request verification"
@@ -39,6 +40,7 @@ export default function HeaderStats() {
                   statIconName="fas fa-book"
                   statIconColor="bg-red-500"
                 />
+                </Link>
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats

@@ -38,7 +38,7 @@ router.put("/:id", putUpdateVolunteer);
 router.delete("/:id", deleteVolunteer);
 
 
-const bcrypt = require ('bcrypt')
+//const bcrypt = require ('bcrypt')
 const jwt = require("jsonwebtoken")
 
 
@@ -54,12 +54,16 @@ router.post('/auth', async (req, res) => {
     const user = await Volunteer.findOne({email});
     if (user) {
       //check user password with hashed password stored in the database
-      const validPassword = await bcrypt.compare(body.password, user.password);
-      if (validPassword) {
+     // const validPassword = await bcrypt.compare(body.password, user.password);
+      //if (validPassword) {
       // const token = generateAccessToken(email)
        //send successful http code with the generated token
-       res.status(201).json("done");
-      } else {
+       //res.status(201).json("done");
+      //}
+      if(password===body.password){
+        res.status(201).json("done");
+      }
+       else {
         //send error http code with message
         res.status(400).json({ message: "Invalid Credentials" });
       }
@@ -76,7 +80,7 @@ router.post('/auth', async (req, res) => {
 router.post('/signup', async (req, res) => {
     const email = req.body.email
     //Password encryption using bcrypt's hash function with 10 salt rounds
-    const password = await bcrypt.hash(req.body.password, 10)
+    const password = req.body.password;
     const username = req.body.username
     const name = req.body.name
     const address = req.body.address

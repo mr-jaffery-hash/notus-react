@@ -40,7 +40,7 @@ export default function Register() {
                   setSuccessful(1);
                   console.log(successful)
                   localStorage.setItem('email', Volunteer.email)
-                  window.location.assign('http://localhost:3000/ratingspage')
+                  window.location.assign('http://localhost:3001/ratingspage')
               })
               .catch(function (error) {
                   console.log(error)
