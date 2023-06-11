@@ -2,6 +2,7 @@
 const express = require("express");
 const router = express.Router();
 const Admin = require("../models/Admin.js");
+const NGO = require("../models/ngo.js")
 //const bcrypt = require ('bcrypt')
 //const jwt = require("jsonwebtoken")
 
@@ -18,6 +19,41 @@ function checkPassword(pass1,pass2){
     }
     return false
 }
+router.post('/', async (req, res) => {
+  console.log(req.body);
+  Admin.create(req.body)
+        .then((data) => res.json({ message: "Admin added successfully", data }))
+        .catch((err) =>
+            res
+                .status(400)
+                .json({ message: "Failed to add admin", error: err.message })
+        );
+})
+
+
+router.post('/addOrg',async(req,res)=>{
+  const email = req.body.email
+  const password = req.body.password
+  const contact = req.body.contact
+  const address = req.body.address
+  NGO.create(req,body)
+  .then((data)=>res.json({message:"NGO added successfully",data}))
+  .catch((err)=>res.status(400).json({message:"Failed to add NGO",error:err.message}));
+})
+
+router.post('/delOrg',async(req,res)=>{
+  NGO.deleteMany({name:req.body.email})
+        .then((data) =>
+            res.json({ message: "ngo deleted successfully", data })
+        )
+        .catch((err) =>
+            res
+                .status(404)
+                .json({ message: "NGO not found", error: err.message })
+        );
+})
+
+
 router.post('/auth', async (req, res) => {
     const body = req.body;
     const email=body.email

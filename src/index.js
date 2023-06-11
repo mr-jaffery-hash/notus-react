@@ -15,6 +15,7 @@ import Auth from "layouts/Auth.js";
 import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
+import Signup from "new/Signup.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -24,6 +25,7 @@ ReactDOM.render(
       <Route path="/auth" component={Auth} />
       {/* add routes without layouts */}
       <Route path="/landing" exact component={Landing} />
+      <Route path="/signup" exact component={Signup} />
       <Route path="/profile" exact component={Profile} />
       {/* add redirect for first page */}
       <Redirect from="/" to="/auth" />

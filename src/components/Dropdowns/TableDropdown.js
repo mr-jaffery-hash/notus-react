@@ -1,7 +1,7 @@
 import React from "react";
 import { createPopper } from "@popperjs/core";
-
-const NotificationDropdown = () => {
+import axios from "axios"
+const NotificationDropdown = (props) => {
   // dropdown props
   const [dropdownPopoverShow, setDropdownPopoverShow] = React.useState(false);
   const btnDropdownRef = React.createRef();
@@ -15,6 +15,17 @@ const NotificationDropdown = () => {
   const closeDropdownPopover = () => {
     setDropdownPopoverShow(false);
   };
+  async function deleteOrg(){
+    console.log(props.name)
+    const res = await axios.post("http://localhost:5000/api/admin/delOrg",props.name)
+    if(res){
+      window.alert("Successful!")
+      window.location.reload()
+    }
+    else{
+      window.alert("Error in deletion!")
+    }
+  }
   return (
     <>
       <a
@@ -40,9 +51,9 @@ const NotificationDropdown = () => {
           className={
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
-          onClick={(e) => e.preventDefault()}
+          onClick={(e) =>{deleteOrg()}}
         >
-          Action
+          Delete
         </a>
         <a
           href="#pablo"

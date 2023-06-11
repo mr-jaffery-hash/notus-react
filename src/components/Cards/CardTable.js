@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 // components
@@ -6,6 +6,13 @@ import PropTypes from "prop-types";
 import TableDropdown from "components/Dropdowns/TableDropdown.js";
 
 export default function CardTable({ color }) {
+  const [name,setName] = useState()
+
+
+  function handleChange(event){
+    setName(event.parentNode.firstChild.textContent)
+  }
+
   return (
     <>
       <div
@@ -74,7 +81,7 @@ export default function CardTable({ color }) {
               </tr>
             </thead>
             <tbody>
-              <tr>
+              <tr onMouseEnter={(e)=>{handleChange(e.target)}}>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
                   {/* <img
                     src={require("assets/img/bootstrap.jpg").default}
@@ -87,7 +94,9 @@ export default function CardTable({ color }) {
                       +(color === "light" ? "text-blueGray-600" : "text-white")
                     }
                   >
+                    <label id = "Label">
                     Naya Savera
+                    </label>
                   </span>
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
@@ -98,7 +107,7 @@ export default function CardTable({ color }) {
                 </td>
                
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
+                  <TableDropdown name = {name}/>
                 </td>
               </tr>
               <tr>
