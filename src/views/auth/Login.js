@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
-
   
 
 
@@ -107,6 +106,9 @@ export default function Login() {
                     >
                       Sign In
                     </button>
+                  </div>
+                  <div className="text-center mt-6">
+                    <Link to="/reset-password">Forgot Password?</Link>
                   </div>
                   <div className="text-blueGray-400 text-center mb-3 font-bold">
                   {show}

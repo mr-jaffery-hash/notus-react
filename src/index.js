@@ -11,7 +11,7 @@ import Admin from "layouts/Admin.js";
 import Auth from "layouts/Auth.js";
 
 // views without layouts
-
+import ResetPass from './new/ResetPass.js';
 import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
@@ -21,6 +21,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       {/* add routes with layouts */}
+      <Route path="/reset-password" component={ResetPass} />
       <Route path="/admin" component={Admin} />
       <Route path="/auth" component={Auth} />
       {/* add routes without layouts */}

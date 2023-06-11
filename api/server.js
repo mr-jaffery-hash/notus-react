@@ -1,10 +1,26 @@
 // server.js
 require("dotenv").config();
+
 const express = require("express");
+const app = express();
+// app.js
+const jwt = require('jsonwebtoken');
+const nodemailer = require('nodemailer');
+const User = require('./models/Admin');
+
+// ...existing code
+
+// Route for password reset
+
+
+// ...existing code
+
+
+
 
 const connectDB = require("./config/db");
 
-const app = express();
+
 const cors = require("cors")
 app.use(cors());
 // routes
@@ -14,6 +30,7 @@ const job=require("./routes/job");
 const req=require("./routes/req");
 const jobreq=require("./routes/jobreq");
 const approveReq = require("./routes/approvereq")
+const resetpass = require("./routes/resetpass")
 // connect database
 connectDB();
 
@@ -22,6 +39,7 @@ app.use(express.json({ extended: false }));
 app.get("/", (req, res) => res.send("Server up and running"));
 
 // use routes
+app.use("/api/reset",resetpass)
 app.use("/api/admin", admin); // added
 app.use("/api/ngo", ngo);
 app.use("/api/job",job);

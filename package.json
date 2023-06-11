@@ -17,6 +17,7 @@
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8",
     "mongoose": "^7.1.1",
+    "nodemailer": "^6.9.3",
     "nodemon": "^2.0.22",
     "postcss": "8.2.8",
     "react": "17.0.1",
