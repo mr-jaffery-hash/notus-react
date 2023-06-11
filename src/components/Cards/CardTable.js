@@ -1,16 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
-
+import axios from "axios"
 // components
 
 import TableDropdown from "components/Dropdowns/TableDropdown.js";
 
 export default function CardTable({ color }) {
-  const [name,setName] = useState()
+  const [orgs, SetOrgs] = useState([])
+  useEffect( () => {
+    fetchOrgs();
+  },[])
 
 
-  function handleChange(event){
+
+  const [name, setName] = useState()
+   async function fetchOrgs(){
+    const res =  await axios.get("http://localhost:5000/api/ngo")
+    SetOrgs(res.data)
+  }
+
+  function handleChange(event) {
     setName(event.parentNode.firstChild.textContent)
+
   }
 
   return (
@@ -58,7 +69,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Current Programs
+                  Address
                 </th>
                 <th
                   className={
@@ -68,7 +79,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Currently Enrolled Students
+                  Contact
                 </th>
                 <th
                   className={
@@ -81,143 +92,33 @@ export default function CardTable({ color }) {
               </tr>
             </thead>
             <tbody>
-              <tr onMouseEnter={(e)=>{handleChange(e.target)}}>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  {/* <img
-                    src={require("assets/img/bootstrap.jpg").default}
-                    className="h-12 w-12 bg-white rounded-full border"
-                    alt="..."
-                  ></img>{" "} */}
-                  <span
-                    className={
-                      "ml-3 font-bold " +
-                      +(color === "light" ? "text-blueGray-600" : "text-white")
-                    }
-                  >
-                    <label id = "Label">
-                    Naya Savera
-                    </label>
-                  </span>
-                </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  8
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  803
-                </td>
-               
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown name = {name}/>
-                </td>
-              </tr>
-              <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  {/* <img
-                    src={require("assets/img/angular.jpg").default}
-                    className="h-12 w-12 bg-white rounded-full border"
-                    alt="..."
-                  ></img>{" "} */}
-                  <span
-                    className={
-                      "ml-3 font-bold " +
-                      +(color === "light" ? "text-blueGray-600" : "text-white")
-                    }
-                  >
-                    Shaukat Khanum
-                  </span>
-                </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  4
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  234
-                </td>
-        
-      
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
-                </td>
-              </tr>
-              <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  {/* <img
-                    src={require("assets/img/sketch.jpg").default}
-                    className="h-12 w-12 bg-white rounded-full border"
-                    alt="..."
-                  ></img>{" "} */}
-                  <span
-                    className={
-                      "ml-3 font-bold " +
-                      +(color === "light" ? "text-blueGray-600" : "text-white")
-                    }
-                  >
-                    Cancer Care Hospital
-                  </span>
-                </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  10 
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  123
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
-                </td>
-              </tr>
-              <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  {/* <img
-                    src={require("assets/img/react.jpg").default}
-                    className="h-12 w-12 bg-white rounded-full border"
-                    alt="..."
-                  ></img>{" "} */}
-                  <span
-                    className={
-                      "ml-3 font-bold " +
-                      +(color === "light" ? "text-blueGray-600" : "text-white")
-                    }
-                  >
-                    SOS Village
-                  </span>
-                </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  9 
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  43
-                </td>
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
-                </td>
-              </tr>
-              <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  {/* <img
-                    src={require("assets/img/vue.jpg").default}
-                    className="h-12 w-12 bg-white rounded-full border"
-                    alt="..."
-                  ></img>{" "} */}
-                  <span
-                    className={
-                      "ml-3 font-bold " +
-                      +(color === "light" ? "text-blueGray-600" : "text-white")
-                    }
-                  >
-                    Rising Sun
-                  </span>
-                </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  12
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  992
-                </td>
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
-                </td>
-              </tr>
+
+            {orgs.map((org) => (
+                <tr onMouseEnter={(e) => { handleChange(e.target) }}>
+                  <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
+                    <span
+                      className={
+                        "ml-3 font-bold " +
+                        +(color === "light" ? "text-blueGray-600" : "text-white")
+                      }
+                    >
+                      <label id="Label">
+                        {org.name}
+                      </label>
+                    </span>
+                  </th>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    {org.address}
+                  </td>
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                    {org.contact}
+                  </td>
+
+                  <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
+                    <TableDropdown name={name} />
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>

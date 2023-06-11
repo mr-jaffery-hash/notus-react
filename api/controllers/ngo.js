@@ -1,7 +1,7 @@
 // controllers/ngo.js
 const NGO = require("../models/ngo");
 
-exports.getAllNGO = (req, res) => {
+exports.getAllNGO =  (req, res) => {
     NGO.find()
         .then((ngo) => res.json(ngo))
         .catch((err) =>
@@ -31,7 +31,10 @@ exports.Login=async(req,res)=>{
 
 
 
-exports.postCreateNGO = (req, res) => {
+exports.postCreateNGO = (req, res) => 
+
+{  
+    console.log(req.body);
     NGO.create(req.body)
         .then((data) => res.json({ message: "NGO added successfully", data }))
         .catch((err) =>
@@ -52,7 +55,7 @@ exports.putUpdateNGO = (req, res) => {
 };
 
 exports.deleteNGO = (req, res) => {
-    NGO.findByIdAndRemove(req.params.id, req.body)
+    NGO.deleteMany({name:req.params.email})
         .then((data) =>
             res.json({ message: "ngo deleted successfully", data })
         )

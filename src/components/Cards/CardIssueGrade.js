@@ -1,11 +1,32 @@
 import React from "react";
 import PropTypes from "prop-types";
-
+import { useEffect,useState } from "react";
 // components
-
-import TableDropdown from "components/Dropdowns/TableDropdown.js";
+import axios from "axios"
+import TableDropdown2 from "../Dropdowns/TableDropdown2";
 
 export default function CardIssueGrade({ color }) {
+  const [reports, Setreps] = useState([])
+  useEffect( () => {
+    fetchreps();
+  },[])
+
+
+
+  const [userid, setUserid] = useState()
+  const [jobid,setJobid] = useState()
+   async function fetchreps(){
+    const res =  await axios.get("http://localhost:5000/api/jobreq/spec")
+    Setreps(res.data)
+    console.log(reports)
+  }
+function handlechange(event){
+  setUserid(event.textContent)
+}
+function handleChange2(event){
+  setJobid(event.textContent)
+}
+
   return (
     <>
       <div
@@ -60,155 +81,38 @@ export default function CardIssueGrade({ color }) {
                       ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
-                >
-                  Hours Worked
-                </th>
-                <th
-                  className={
-                    "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
-                    (color === "light"
-                      ? "bg-blueGray-50 text-blueGray-500 border-blueGray-100"
-                      : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
-                  }
                 ></th>
               </tr>
             </thead>
             <tbody>
-              <tr>
+              
+              {reports.map((report) => (
+                <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
                   {/* <img
                     src={require("assets/img/bootstrap.jpg").default}
                     className="h-12 w-12 bg-white rounded-full border"
                     alt="..."
                   ></img>{" "} */}
-                  <span
+                  <span onMouseEnter={(e)=>{handlechange(e.target)}}
                     className={
                       "ml-3 font-bold " +
                       +(color === "light" ? "text-blueGray-600" : "text-white")
                     }
                   >
-                    Ibrahim Maaz
+                    {report.Userid}
                   </span>
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                Naya Savera
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  24
+                  <span onMouseEnter={(e)=>{handleChange2(e.target)}}> {report.Jobid}</span>
+                         
                 </td>
                
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
+                  <TableDropdown2 userid = {userid} jobid = {jobid}/>
                 </td>
               </tr>
-              <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  {/* <img
-                    src={require("assets/img/angular.jpg").default}
-                    className="h-12 w-12 bg-white rounded-full border"
-                    alt="..."
-                  ></img>{" "} */}
-                  <span
-                    className={
-                      "ml-3 font-bold " +
-                      +(color === "light" ? "text-blueGray-600" : "text-white")
-                    }
-                  >
-                    Shobana Khalid
-                  </span>
-                </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                Shaukat Khanum
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  24
-                </td>
-        
-      
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
-                </td>
-              </tr>
-              <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  {/* <img
-                    src={require("assets/img/sketch.jpg").default}
-                    className="h-12 w-12 bg-white rounded-full border"
-                    alt="..."
-                  ></img>{" "} */}
-                  <span
-                    className={
-                      "ml-3 font-bold " +
-                      +(color === "light" ? "text-blueGray-600" : "text-white")
-                    }
-                  >
-                    Saleha Muzamil
-                  </span>
-                </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                Cancer Care Hospital
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  24
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
-                </td>
-              </tr>
-              <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  {/* <img
-                    src={require("assets/img/react.jpg").default}
-                    className="h-12 w-12 bg-white rounded-full border"
-                    alt="..."
-                  ></img>{" "} */}
-                  <span
-                    className={
-                      "ml-3 font-bold " +
-                      +(color === "light" ? "text-blueGray-600" : "text-white")
-                    }
-                  >
-                    Hussain Abbas
-                  </span>
-                </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                SOS Village
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  24
-                </td>
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
-                </td>
-              </tr>
-              <tr>
-                <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center">
-                  {/* <img
-                    src={require("assets/img/vue.jpg").default}
-                    className="h-12 w-12 bg-white rounded-full border"
-                    alt="..."
-                  ></img>{" "} */}
-                  <span
-                    className={
-                      "ml-3 font-bold " +
-                      +(color === "light" ? "text-blueGray-600" : "text-white")
-                    }
-                  >
-                    Ahmad Khan
-                  </span>
-                </th>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                Rising Sun
-                </td>
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  23
-                </td>
-                
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
-                  <TableDropdown />
-                </td>
-              </tr>
+              ))}
             </tbody>
           </table>
         </div>

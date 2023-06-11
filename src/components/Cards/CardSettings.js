@@ -15,7 +15,8 @@ export default function CardSettings() {
       contact:contact,
       address:address
     }
-    const res = await axios.post('http://localhost:5000/api/admin/addOrg',ngo)
+    console.log(ngo.contact)
+    const res = await axios.post('http://localhost:5000/api/ngo',ngo)
     if(res){
       setShow(1)
     }

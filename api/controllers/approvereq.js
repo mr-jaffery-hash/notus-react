@@ -1,8 +1,8 @@
 // controllers/req.js
-const Jobreq = require("../models/jobreq");
-
+const Approvereq = require("../models/ApprovedReq");
+const Jobreq = require("../models/jobreq")
 exports.getAllReq = (req, res) => {
-    Jobreq.find()
+    Approvereq.find()
         .then((req) => res.json(req))
         .catch((err) =>
             res
@@ -11,7 +11,7 @@ exports.getAllReq = (req, res) => {
         );
 };
 exports.getSpecReq = (req, res) => {
-    Jobreq.find({Approved:true})
+    Approvereq.find({Approved:true})
         .then((req) => res.json(req))
         .catch((err) =>
             res
@@ -20,19 +20,28 @@ exports.getSpecReq = (req, res) => {
         );
 };
 exports.postCreateReq = (req, res) => {
-    Jobreq.create(req.body)
-        .then((data) => res.json({ message: "REQ added successfully", data }))
+    const params={
+        Userid:req.body.param1,
+        Jobid:req.body.param2
+    }
+     Approvereq.create(params)
+        .then(            
+            (data) =>
+                res.json({ message: "req deleted successfully", data })
+            )
         .catch((err) =>
             res
                 .status(400)
                 .json({ message: "Failed to add req", error: err.message })
         );
+    
+        
 };
 
 exports.putUpdateReq = (req, res) => {
     console.log("I came here");
 
-    Jobreq.findByIdAndUpdate(
+    Approvereq.findByIdAndUpdate(
     
       req.params.id,
       { Approved: true },
@@ -47,16 +56,9 @@ exports.putUpdateReq = (req, res) => {
   };
 
 exports.deleteReq = (req, res) => {
-    console.log(req.query);
-    const params = {
-        f1: req.body.param1,
-        f2:req.body.param2
-    }
-    console.log("here",params)
-    const userid = req.body.param1
-    const jobid = req.body.param2
-    console.log(userid,jobid)
-    Jobreq.deleteOne({Userid : userid, Jobid : jobid})
+    const userid = req.body.params.param1
+    const jobid = req.body.params.param2
+    Approvereq.deleteOne({Userid:userid, Jobid:jobid})
         .then((data) =>
             res.json({ message: "req deleted successfully", data })
         )

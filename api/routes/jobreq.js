@@ -3,6 +3,7 @@ const router = express.Router();
 
 const {
     getAllReq,
+    getSpecReq,
     postCreateReq,
     putUpdateReq,
     deleteReq,
@@ -14,7 +15,12 @@ const {
  * @access public
  */
 router.get("/", getAllReq);
-
+/**
+ * @route GET api/todo
+ * @description get all todo
+ * @access public
+ */
+router.get("/spec", getSpecReq);
 /**
  * @route POST api/todo
  * @description add a new todo
@@ -34,6 +40,6 @@ router.put("/:id", putUpdateReq);
  * @description delete todo
  * @access public
  */
-router.delete("/:id", deleteReq);
+router.delete("/deleteReq", deleteReq);
 
 module.exports = router;

@@ -13,6 +13,7 @@ const ngo = require("./routes/ngo");
 const job=require("./routes/job");
 const req=require("./routes/req");
 const jobreq=require("./routes/jobreq");
+const approveReq = require("./routes/approvereq")
 // connect database
 connectDB();
 
@@ -26,6 +27,7 @@ app.use("/api/ngo", ngo);
 app.use("/api/job",job);
 app.use("/api/req",req);
 app.use("/api/jobreq",jobreq);
+app.use("/api/approvereq",approveReq)
 // setting up port
 const PORT = process.env.PORT || 5000;
 

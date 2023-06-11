@@ -15,13 +15,18 @@ const NotificationDropdown = (props) => {
   const closeDropdownPopover = () => {
     setDropdownPopoverShow(false);
   };
-  async function deleteOrg(){
-    const email = props.name
-    console.log(email)
-    const res = await axios.delete(`http://localhost:5000/api/ngo/${email}`)
-    if(res){
+  async function approveReq(){
+    const params={
+        param1:props.userid,
+        param2:props.jobid
+    }
+    console.log(params);
+    
+    const res2 = await axios.post(`http://localhost:5000/api/approvereq`,params)
+
+    if( res2){
       window.alert("Successful!")
-      window.location.reload()
+      //window.location.reload()
     }
     else{
       window.alert("Error in deletion!")
@@ -52,9 +57,9 @@ const NotificationDropdown = (props) => {
           className={
             "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
           }
-          onClick={(e) =>{deleteOrg()}}
+          onClick={(e) =>{approveReq()}}
         >
-          Delete
+          Approve
         </a>
         <a
           href="#pablo"
