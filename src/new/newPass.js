@@ -4,10 +4,10 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 function ResetPass() {
-  const [email, setEmail] = useState('');
+  const [pass, setPass] = useState('');
   const [show,setShow] = useState()
-  const handleEmailChange = (event) => {
-    setEmail(event.target.value);
+  const handlePassChange = (event) => {
+    setPass(event.target.value);
   };
 
   const handleSubmit = async (event) => {
@@ -15,14 +15,18 @@ function ResetPass() {
 
     try {
       // Send a request to the backend API
-      await axios.post('http://localhost:5000/api/reset/reset-password', { email });
+      const obj={
+        email:localStorage.getItem("email"),
+        pass:pass
+      }
+      await axios.post('http://localhost:5000/api/newpass/setnewpass',obj);
       console.log('Password reset email sent');
     } catch (error) {
       console.error(error);
       // Handle error
     }
-    localStorage.setItem('email',email)
-    setShow("Reset Email Sent!")
+    window.alert("Password Reset Successful!")
+    window.location.assign("http://localhost:3000/")
   };
 
   return (
@@ -51,16 +55,18 @@ function ResetPass() {
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                       htmlFor="grid-password"
                     >
-                      Email
+                      Enter New Password
                     </label>
                     <input
-                    value={email}
-                    onChange={handleEmailChange}
-                      type="email"
+                    value={pass}
+                    onChange={handlePassChange}
+                      type="password"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Email"
+                      placeholder="New Password"
                     />
                   </div>
+
+                  
 
                   <div>
                     

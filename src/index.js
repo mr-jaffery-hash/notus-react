@@ -9,7 +9,7 @@ import "assets/styles/tailwind.css";
 
 import Admin from "layouts/Admin.js";
 import Auth from "layouts/Auth.js";
-
+import NewPass from "./new/newPass"
 // views without layouts
 import ResetPass from './new/ResetPass.js';
 import Landing from "views/Landing.js";
@@ -21,6 +21,7 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       {/* add routes with layouts */}
+      <Route path = "/reset" component = {NewPass}/>
       <Route path="/reset-password" component={ResetPass} />
       <Route path="/admin" component={Admin} />
       <Route path="/auth" component={Auth} />

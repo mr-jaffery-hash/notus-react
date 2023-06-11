@@ -33,7 +33,7 @@ router.post('/reset-password', async (req, res) => {
         subject: 'Password Reset',
         html: `
           <p>You requested a password reset.</p>
-          <p>Click this <a href="http://localhost:5000/reset/${resetToken}">link</a> to set a new password.</p>
+          <p>Click this <a href="http://localhost:3000/reset/${email}">link</a> to set a new password.</p>
         `,
       };
   
