@@ -62,7 +62,7 @@ export default function Login() {
               </div>
               <div className="flex-auto px-4 lg:px-10 py-10 pt-0">
                 
-                <form>
+                <form onSubmit>
                   <div className="relative w-full mb-3">
                     <label
                       className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
@@ -99,13 +99,13 @@ export default function Login() {
                   </div>
 
                   <div className="text-center mt-6">
-                    <button
-                    onClick={onSubmitAdmin}
+                    {/* <button
                       className="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                       type="button"
                     >
                       Sign In
-                    </button>
+                    </button> */}
+                    <Link to="/admin/dashboard">Sign Up</Link>
                   </div>
                   <div className="text-center mt-6">
                     <Link to="/reset-password">Forgot Password?</Link>

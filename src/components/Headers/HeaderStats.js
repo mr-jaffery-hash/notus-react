@@ -15,7 +15,7 @@ export default function HeaderStats() {
             <div className="flex flex-wrap">
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="Enrolled Organisations"
+                  statSubtitle="Enrolled Donors"
                   statTitle="57"
                   statArrow="up"
                   statPercent="3.48"
@@ -39,7 +39,7 @@ export default function HeaderStats() {
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <CardStats
-                  statSubtitle="Open Job"
+                  statSubtitle="Pending Student Requests"
                   statTitle="94"
                   statArrow="down"
                   statPercent="1.10"

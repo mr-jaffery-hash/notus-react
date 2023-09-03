@@ -30,7 +30,7 @@ export default function CardSettings() {
         <div className="rounded-t bg-white mb-0 px-6 py-6">
           <div className="text-center flex justify-between">
 
-            <h6 className="text-blueGray-700 text-xl font-bold">Register an Organisation</h6>
+            <h6 className="text-blueGray-700 text-xl font-bold">Register Admin</h6>
             <button
             onClick={insertOrg}
               className="bg-lightBlue-500 text-white active:bg-lightBlue-600 font-bold uppercase text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 ease-linear transition-all duration-150"
@@ -149,10 +149,10 @@ export default function CardSettings() {
 
             <hr className="mt-6 border-b-1 border-blueGray-300" />
 
-            <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
+            {/* <h6 className="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
               About Organisation
-            </h6>
-            <div className="flex flex-wrap">
+            </h6> */}
+            {/* <div className="flex flex-wrap">
               <div className="w-full lg:w-12/12 px-4">
                 <div className="relative w-full mb-3">
                   <label
@@ -169,7 +169,7 @@ export default function CardSettings() {
                   ></textarea>
                 </div>
               </div>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>

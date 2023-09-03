@@ -16,6 +16,7 @@ import Landing from "views/Landing.js";
 import Profile from "views/Profile.js";
 import Index from "views/Index.js";
 import Signup from "new/Signup.js";
+import Dashboard from "views/admin/Dashboard";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -29,6 +30,8 @@ ReactDOM.render(
       <Route path="/landing" exact component={Landing} />
       <Route path="/signup" exact component={Signup} />
       <Route path="/profile" exact component={Profile} />
+      <Route path="/admin/dashboard" exact component={Dashboard} />
+      
       {/* add redirect for first page */}
       <Redirect from="/" to="/auth" />
     </Switch>
