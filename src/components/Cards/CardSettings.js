@@ -80,7 +80,7 @@ export default function CardSettings(props) {
                     className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
                     htmlFor="grid-password"
                   >
-                    Name
+                    FULL-Name
                   </label>
                   <input
                     onChange={(e)=>{setName(e.target.value)}}

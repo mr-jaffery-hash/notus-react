@@ -143,7 +143,7 @@ export default function Register() {
                       onChange={(e)=>{setUsername(e.target.value)}}
                       type="text"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Name"
+                      placeholder="Username"
                     />
                   </div>
                   <div className="relative w-full mb-3">
@@ -158,7 +158,7 @@ export default function Register() {
                       onChange={(e)=>{setAddress(e.target.value)}}
                       type="text"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Name"
+                      placeholder="Address"
                     />
                   </div>
                   <div className="relative w-full mb-3">
@@ -173,7 +173,7 @@ export default function Register() {
                       onChange={(e)=>{setPhoneno(e.target.value)}}
                       type="text"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Name"
+                      placeholder="Number"
                     />
                   </div>
                   <div className="relative w-full mb-3">
@@ -188,7 +188,37 @@ export default function Register() {
                       onChange={(e)=>{setInstitute(e.target.value)}}
                       type="text"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Name"
+                      placeholder="Institute"
+                    />
+                  </div>
+                  <div className="relative w-full mb-3">
+                    <label
+                      className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                      htmlFor="grid-password"
+                    >
+                      Degree Program
+                    </label>
+                    <input
+                      value={institute}
+                      onChange={(e)=>{setInstitute(e.target.value)}}
+                      type="text"
+                      className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                      placeholder="Bachelors in ..."
+                    />
+                  </div>
+                  <div className="relative w-full mb-3">
+                    <label
+                      className="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                      htmlFor="grid-password"
+                    >
+                      Cgpa
+                    </label>
+                    <input
+                      value={institute}
+                      onChange={(e)=>{setInstitute(e.target.value)}}
+                      type="text"
+                      className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                      placeholder="Cgpa 1-4"
                     />
                   </div>
                   <div className="relative w-full mb-3">
@@ -220,7 +250,7 @@ export default function Register() {
                       onChange={(e)=>{setPass2(e.target.value)}}
                       type="password"
                       className="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                      placeholder="Name"
+                      placeholder="Password"
                     />
                   </div>
                   

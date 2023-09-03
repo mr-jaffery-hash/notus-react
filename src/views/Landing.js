@@ -29,11 +29,10 @@ export default function Landing() {
               <div className="w-full lg:w-6/12 px-4 ml-auto mr-auto text-center">
                 <div className="pr-12">
                   <h1 className="text-white font-semibold text-5xl">
-                    Welcome to Rafah
+                    Scholar Support
                   </h1>
                   <p className="mt-4 text-lg text-blueGray-200">
-                    Rafah is your one stop solution to volunteership. We at Rafah provide you the 
-                    opportunity to give back to the community. 
+                    Connecting Dreams, Fueling Futures: Where Donors and Students Unite
                   </p>
                 </div>
               </div>
@@ -71,7 +70,7 @@ export default function Landing() {
                     </div>
                     <h6 className="text-xl font-semibold">AI Powered</h6>
                     <p className="mt-2 mb-4 text-blueGray-500">
-                     Advanced algorithm for core functionalities.
+                      Advanced algorithm for core functionalities.
                     </p>
                   </div>
                 </div>
@@ -119,10 +118,10 @@ export default function Landing() {
                   using the latest technologies to power our website.
                 </p>
                 <p className="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600">
-                  We bring innovation to volunteering in Pakistan by integrating Artifical Intelligence
-                  algorithms into Rafah.
+                  We bring innovation to philanthropy in Pakistan by integrating Artifical Intelligence
+                  algorithms into Scholar Support
                 </p>
-                
+
               </div>
 
               <div className="w-full md:w-4/12 px-4 mr-auto ml-auto">
@@ -148,7 +147,7 @@ export default function Landing() {
                       Top Notch Services
                     </h4>
                     <p className="text-md font-light mt-2 text-white">
-                      We cater to both the organizations and volunteer needs.
+                      We cater to both the donors and students needs.
                     </p>
                   </blockquote>
                 </div>
@@ -192,10 +191,10 @@ export default function Landing() {
                   <div className="text-lightBlue-600 p-3 text-center inline-flex items-center justify-center w-16 h-16 mb-6 shadow-lg rounded-full bg-lightBlue-300">
                     <i className="fas fa-rocket text-xl"></i>
                   </div>
-                  <h3 className="text-3xl font-semibold">About Rafah!</h3>
+                  <h3 className="text-3xl font-semibold">About Us!</h3>
                   <p className="mt-4 text-lg leading-relaxed text-blueGray-500">
-                    Rafah is an idea to bring revolution into the field of volunteership in Pakistan.
-                    We look forward to taking this idea worldwide and giving back to the community.
+                    Scholar Support is a transformative platform where donors and students come together to redefine the future. Our mission extends beyond borders
+                    , with Scholar Support committed to creating a global impact and giving back to communities worldwide.
                   </p>
                   <ul className="list-none mt-6">
                     <li className="py-2">
@@ -253,7 +252,7 @@ export default function Landing() {
               <div className="w-full lg:w-6/12 px-4">
                 <h2 className="text-4xl font-semibold">Here is our team</h2>
                 <p className="text-lg leading-relaxed m-4 text-blueGray-500">
-                  The Pioneers of Rafah!!!
+                  The Pioneers of Scholar Support!!!
                 </p>
               </div>
             </div>
@@ -266,7 +265,7 @@ export default function Landing() {
                     className="shadow-lg rounded-full mx-auto max-w-120-px"
                   />
                   <div className="pt-6 text-center">
-                    <h5 className="text-xl font-bold">Hussain Abbas</h5>
+                    <h5 className="text-xl font-bold">Usman Elahi</h5>
                     <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
                       Backend Developer
                     </p>
@@ -330,7 +329,7 @@ export default function Landing() {
                     className="shadow-lg rounded-full mx-auto max-w-120-px"
                   />
                   <div className="pt-6 text-center">
-                    <h5 className="text-xl font-bold">Mohsin Raza</h5>
+                    <h5 className="text-xl font-bold">Hadi Shehryar</h5>
                     <p className="mt-1 text-sm text-blueGray-400 uppercase font-semibold">
                       UI/UX Designer
                     </p>
@@ -430,15 +429,15 @@ export default function Landing() {
                   Work with us
                 </h2>
                 <p className="text-lg leading-relaxed mt-4 mb-4 text-blueGray-400">
-                  The missing bridge between organizations and students is here
+                  The missing bridge between donors and students is here
                 </p>
               </div>
             </div>
-           
-              
+
+
           </div>
         </section>
-        
+
       </main>
       <Footer />
     </>
