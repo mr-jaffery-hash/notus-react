@@ -43,7 +43,7 @@ export default function CardTable({ color }) {
                 >
                   
                 </th> */}
-                <th
+                {/* <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
                     (color === "light"
@@ -52,7 +52,7 @@ export default function CardTable({ color }) {
                   }
                 >
                   Donor
-                </th>
+                </th> */}
                 <th
                   className={
                     "px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left " +
@@ -61,7 +61,7 @@ export default function CardTable({ color }) {
                       : "bg-lightBlue-800 text-lightBlue-300 border-lightBlue-700")
                   }
                 >
-                  Amount Provided
+                  Amount Requested
                 </th>
                 <th
                   className={
@@ -111,9 +111,9 @@ export default function CardTable({ color }) {
                     Atif Ali 
                   </span>
                 </th> */}
-                <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
+                {/* <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                     Atif Ali
-                </td>
+                </td> */}
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
                   2000
                 </td>
@@ -124,7 +124,7 @@ export default function CardTable({ color }) {
                 12/11/2022
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                Approved
+                Pending
                 </td>
                 {/* <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-right">
                   <TableDropdown />

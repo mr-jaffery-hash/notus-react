@@ -31,11 +31,12 @@ export default function Login() {
       });
   }
   function onSubmitVolunteer() {
-      const volunteer = {
-        email: email,
-        password: password,
-      }
-      checkV(volunteer)
+      // const volunteer = {
+      //   email: email,
+      //   password: password,
+      // }
+      // checkV(volunteer)
+      window.location.href="/admin"
   }
 
 

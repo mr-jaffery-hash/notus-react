@@ -10,7 +10,7 @@ export default function CardSocialTraffic() {
           <div className="flex flex-wrap items-center">
             <div className="relative w-full px-4 max-w-full flex-grow flex-1">
               <h3 className="font-semibold text-base text-blueGray-700">
-                Vacancies
+                Pending Requests
               </h3>
             </div>
             <div className="relative w-full px-4 max-w-full flex-grow flex-1 text-right">
@@ -29,10 +29,10 @@ export default function CardSocialTraffic() {
             <thead className="thead-light">
               <tr>
                 <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                  Organisation
+                  Requested Amount
                 </th>
                 <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
-                  Volunteers
+                  Date
                 </th>
                 <th className="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left min-w-140-px"></th>
               </tr>
@@ -40,13 +40,13 @@ export default function CardSocialTraffic() {
             <tbody>
               <tr>
                 <th className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left">
-                  Edhi
+                  12000
                 </th>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  40
+                  12/1/2021
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <span className="mr-2">60%</span>
                     <div className="relative w-full">
                       <div className="overflow-hidden h-2 text-xs flex rounded bg-red-200">
@@ -56,7 +56,7 @@ export default function CardSocialTraffic() {
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </td>
               </tr>
               <tr>
@@ -67,7 +67,7 @@ export default function CardSocialTraffic() {
                   7
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <span className="mr-2">70%</span>
                     <div className="relative w-full">
                       <div className="overflow-hidden h-2 text-xs flex rounded bg-emerald-200">
@@ -77,7 +77,7 @@ export default function CardSocialTraffic() {
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </td>
               </tr>
               <tr>
@@ -88,7 +88,7 @@ export default function CardSocialTraffic() {
                   1
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <span className="mr-2">50%</span>
                     <div className="relative w-full">
                       <div className="overflow-hidden h-2 text-xs flex rounded bg-purple-200">
@@ -98,7 +98,7 @@ export default function CardSocialTraffic() {
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </td>
               </tr>
               <tr>
@@ -109,7 +109,7 @@ export default function CardSocialTraffic() {
                   18
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <span className="mr-2">90%</span>
                     <div className="relative w-full">
                       <div className="overflow-hidden h-2 text-xs flex rounded bg-lightBlue-200">
@@ -119,7 +119,7 @@ export default function CardSocialTraffic() {
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </td>
               </tr>
               <tr>
@@ -130,7 +130,7 @@ export default function CardSocialTraffic() {
                   5
                 </td>
                 <td className="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4">
-                  <div className="flex items-center">
+                  {/* <div className="flex items-center">
                     <span className="mr-2">50%</span>
                     <div className="relative w-full">
                       <div className="overflow-hidden h-2 text-xs flex rounded bg-orange-200">
@@ -140,7 +140,7 @@ export default function CardSocialTraffic() {
                         ></div>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </td>
               </tr>
             </tbody>

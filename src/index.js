@@ -19,6 +19,9 @@ import Index from "views/Index.js";
 import RatingsPage from "./Pages/RatingsPage.js"
 //new
 import Jobsel from "new/Jobsel.js";
+import RequestAid from "./components/SS/RequestWrapper.js"
+import PendingRequests from "./components/SS/PendingAid.js"
+import EditProfile from "./views/admin/Settings.js"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -32,8 +35,10 @@ ReactDOM.render(
       <Route path="/landing" exact component={Landing} />
       <Route path="/profile" exact component={Profile} />
       <Route path="/" exact component={Landing} />
-      <Route path="/search" exact component={SearchPage}></Route>
+      <Route path="/editProfile" exact component={EditProfile} />
+      <Route path="/search" exact component={RequestAid}></Route>
       <Route path="/reportClearance" exact component={TempReportClearance}></Route>
+      <Route path="/pendingAid" exact component={PendingRequests}></Route>
       <Route path="/enroll" exact component={EnrollmentForm}></Route>
       <Route path="/ratingspage" exact component={RatingsPage}></Route>
       {/* add redirect for first page */}

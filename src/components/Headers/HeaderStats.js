@@ -17,22 +17,22 @@ export default function HeaderStats() {
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
                 <Link to="/search">
                 <CardStats
-                  statSubtitle="SEARCH FOR COMMUNITY WORK"
-                  statTitle="Register for volunteership"
-                  statArrow="up"
-                  statPercent="100+ vacancies"
+                  statSubtitle="Connect with thousands of donors"
+                  statTitle="Request New Aid"
+                  statArrow=""
+                  statPercent=""
                   statPercentColor="text-emerald-500"
-                  statDescripiron="in the last 24 hours"
+                  statDescripiron=""
                   statIconName="fas fa-users"
                   statIconColor="bg-lightBlue-500"
                 />
                 </Link>
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
-              <Link to="/jobsel">
+              <Link to="/reportClearance">
                 <CardStats
-                  statSubtitle="REPORT CLEARANCE"
-                  statTitle="Request verification"
+                  statSubtitle="View your previous aid requests"
+                  statTitle="Request History"
                   statArrow=""
                   statPercent=""
                   statPercentColor=""
@@ -43,9 +43,10 @@ export default function HeaderStats() {
                 </Link>
               </div>
               <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+              <Link to="/pendingAid">
                 <CardStats
-                  statSubtitle="PAST ACTIVITIES"
-                  statTitle="See previous involvements"
+                  statSubtitle="View Requests that are pending"
+                  statTitle="Pending Requests"
                   statArrow=""
                   statPercent=""
                   statPercentColor=""
@@ -53,8 +54,10 @@ export default function HeaderStats() {
                   statIconName="fas fa-clock"
                   statIconColor="bg-pink-500"
                 />
+                </Link>
               </div>
-              <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+              {/* <div className="w-full lg:w-6/12 xl:w-3/12 px-4">
+              <Link to="editProfile">
                 <CardStats
                   statSubtitle="ACADEMIC DETAILS"
                   statTitle="See your information"
@@ -65,7 +68,8 @@ export default function HeaderStats() {
                   statIconName="fas fa-school"
                   statIconColor="bg-lightBlue-500"
                 />
-              </div>
+                </Link>
+              </div> */}
             </div>
           </div>
         </div>
