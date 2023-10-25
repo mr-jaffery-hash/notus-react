@@ -31,11 +31,12 @@ export default function Login() {
       });
   }
   function onSubmitVolunteer() {
-      const volunteer = {
-        email: email,
-        password: password,
-      }
-      checkV(volunteer)
+      // const volunteer = {
+      //   email: email,
+      //   password: password,
+      // }
+      // checkV(volunteer)
+      window.location.href="/donor/dashboard"
   }
 
 
@@ -123,7 +124,7 @@ export default function Login() {
                         className="form-checkbox border-0 rounded text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150"
                       />
                       <span className="ml-2 text-sm font-semibold text-blueGray-600">
-                        Remember me
+                        Remember me!
                       </span>
                     </label>
                   </div>
