@@ -36,7 +36,7 @@ export default function Login() {
       //   password: password,
       // }
       // checkV(volunteer)
-      window.location.href="/donor/dashboard"
+      window.location.href="/donor/home"
   }
 
 

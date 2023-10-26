@@ -8,7 +8,7 @@ import { Switch, Route, Redirect } from "react-router-dom";
 // import HeaderStats from "components/Headers/HeaderStats.js";
 // import FooterAdmin from "components/Footers/FooterAdmin.js";
 import AdminNavbar from "../../components/Navbars/AdminNavbar.js"
-import Sidebar from "../Sidebar/Sidebar.js"
+import Sidebar from "../SS/DonorSidebar.js"
 import HeaderStats from "../Headers/HeaderStats.js";
 import FooterAdmin from "../Footers/Footer.js"
 import SSHeaderStats from "../SS/SSHeaderStats.js"

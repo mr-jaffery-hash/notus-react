@@ -26,6 +26,7 @@ import DonorLogin from "./components/SS/Login.js"
 import Donor from "./components/SS/LoginWrapper.js"
 import DonorDashboard from "./components/SS/Donor.js"
 import DonorHome from "./components/SS/DonorHome.js"
+import DonorRegister from "./components/SS/SignupWrapper.js"
 
 ReactDOM.render(
   <BrowserRouter>
@@ -41,6 +42,7 @@ ReactDOM.render(
       <Route path ="/donor" exact component={Donor}/>
       <Route path="/donor/login" exact component={DonorLogin} />
       <Route path="/donor/dashboard" exact component={DonorDashboard}/>
+      <Route path="/donor/register" exact component={DonorRegister}/>
       <Route path="/donor/home" exact component={DonorHome}/>
       <Route path="/" exact component={Landing} />
       <Route path="/editProfile" exact component={EditProfile} />
